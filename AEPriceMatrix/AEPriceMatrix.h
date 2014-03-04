@@ -10,4 +10,6 @@
 
 @interface AEPriceMatrix : NSObject
 
++ (NSNumber *)convert:(NSNumber *)value from:(NSString *)currencyIn to:(NSString *)currencyOut;
+
 @end
