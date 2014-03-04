@@ -14,6 +14,8 @@ static NSDictionary *priceMatrix = nil;
 @interface AEPriceMatrix(private)
 
 + (NSDictionary *)priceMatrix;
++ (int)findTierFor:(NSNumber *)value in:(NSArray *)array;
++ (int)findTierFor:(NSNumber *)value in:(NSArray *)array between:(int)low and:(int)high;
 
 @end
 
@@ -35,6 +37,33 @@ static NSDictionary *priceMatrix = nil;
         priceMatrix = [NSDictionary dictionaryWithContentsOfFile:path];
     }
     return priceMatrix;
+}
+
++ (int)findTierFor:(NSNumber *)value in:(NSArray *)array {
+    int max = array.count-1;
+    int tier = [self findTierFor:value in:array between:0 and:max];
+    if (tier > max) {
+        tier = max;
+    }
+    return tier;
+}
+
+// find lowest array index of element greater or equal to value with binary search
+// return last index if value is greater than last element
++ (int)findTierFor:(NSNumber *)value in:(NSArray *)array between:(int)low and:(int)high {
+    if (low > high) {
+        return low;
+    }
+    int mid = (low + high) / 2;
+    NSNumber *midValue = [array objectAtIndex:mid];
+    switch ([value compare:midValue]) {
+        case NSOrderedSame:
+            return mid;
+        case NSOrderedAscending:
+            return [self findTierFor:value in:array between:low and:mid-1];
+        case NSOrderedDescending:
+            return [self findTierFor:value in:array between:mid+1 and:high];
+    }
 }
 
 @end
