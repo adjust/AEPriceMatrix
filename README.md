@@ -44,5 +44,37 @@ Guide][inAppGuide] for details on how to implement a method like
 }
 ```
 
+## Available Currency Codes
+
+Instead of plain currency code strings like `@"USD"` you can also use the
+following string constants:
+
+```objc
+kAECurrencyUSD    // U.S.
+kAECurrencyCAD    // Canada
+kAECurrencyMXN    // Mexico
+kAECurrencyAUD    // Australia
+kAECurrencyNZD    // New Zealand
+kAECurrencyJPY    // Japan
+kAECurrencyEUR    // Europe
+kAECurrencyCHF    // Switzerland
+kAECurrencyNOK    // Norway
+kAECurrencyGBP    // U.K
+kAECurrencyDKK    // Denmark
+kAECurrencySEK    // Sweden
+kAECurrencyCNY    // China
+kAECurrencySGD    // Singapore
+kAECurrencyHKD    // Hong Kong
+kAECurrencyTWD    // Taiwan
+kAECurrencyRUB    // Russia
+kAECurrencyTRY    // Turkey
+kAECurrencyINR    // India
+kAECurrencyIDR    // Indonesia
+kAECurrencyILS    // Isreal
+kAECurrencyZAR    // South Africa
+kAECurrencySAR    // Saudi Arabia
+kAECurrencyAED    // UAE
+```
+
 [priceMatrix]: http://forecomm.mptw.fr/templates/PriceMatrix.html
 [inAppGuide]: https://developer.apple.com/Library/ios/documentation/NetworkingInternet/Conceptual/StoreKitGuide/Chapters/ShowUI.html
