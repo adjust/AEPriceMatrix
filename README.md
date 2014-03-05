@@ -1,9 +1,8 @@
-AEPriceMatrix
-=============
+# AEPriceMatrix
 
-Tier based currency conversion for iOS
+Tier based currency conversion for iOS based on the [App Store Pricing Matrix][priceMatrix].
 
-Based on the [App Store Pricing Matrix][priceMatrix].
+## Overview
 
 Example usage:
 ```objc
@@ -14,6 +13,8 @@ Output:
 ```
 converted to 0.89
 ```
+
+## In-App Purchase Tracking
 
 This can be used for In-App Purchase tracking in a specific currency regardless
 of the local currency that the purchase was paid in. The following example
