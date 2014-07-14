@@ -82,7 +82,7 @@ static NSDictionary *priceMatrix = nil;
 }
 
 + (int)findTierFor:(NSNumber *)value in:(NSArray *)array {
-    int max = array.count-1;
+    int max = (int)array.count - 1;
     int tier = [self findTierFor:value in:array between:0 and:max];
     if (tier > max) {
         tier = max;
